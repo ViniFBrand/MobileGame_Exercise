@@ -1,8 +1,9 @@
+using Ebac.Core.Sigleton;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     #region VARIABLES
     //publics
@@ -22,13 +23,16 @@ public class PlayerController : MonoBehaviour
     //privates
     private bool _canRun;
     private Vector3 _pos;
+    private float _currentSpeed;
+    private Vector3 _startPosition;
 
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-        //_canRun = true;
+        _startPosition = transform.position;
+        ResetSpeed();
     }
 
     // Update is called once per frame
@@ -41,7 +45,7 @@ public class PlayerController : MonoBehaviour
         _pos.z = transform.position.z;
 
         transform.position = Vector3.Lerp(transform.position, _pos, lerpSpeed * Time.deltaTime);
-        transform.Translate(transform.forward * speed * Time.deltaTime);
+        transform.Translate(transform.forward * _currentSpeed * Time.deltaTime);
     }
 
     #region FUNCTIONS
@@ -55,6 +59,22 @@ public class PlayerController : MonoBehaviour
         _canRun = false;
         endScreen.SetActive(true);
     }
+
+    #region POWER UPS
+    public void SetPowerUpText(string s)
+    {
+        //uiTextPowerUp.text = s;
+    }
+    public void PowerUpSpeedUp(float f)
+    {
+        _currentSpeed = f;
+    }
+    public void ResetSpeed()
+    {
+        _currentSpeed = speed;
+    }
+    #endregion
+
 
     #endregion
 
