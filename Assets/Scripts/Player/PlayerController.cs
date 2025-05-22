@@ -15,6 +15,7 @@ public class PlayerController : Singleton<PlayerController>
 
     public string tagToCheckEnemy = "Enemy";
     public string tagToCheckEndLine = "EndLine";
+    public bool invincible = false;
 
 
 
@@ -73,6 +74,11 @@ public class PlayerController : Singleton<PlayerController>
     {
         _currentSpeed = speed;
     }
+
+    public void SetInvincible(bool b = true) //por default é passado true
+    {
+        invincible = b;
+    }
     #endregion
 
 
@@ -83,7 +89,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (collision.transform.tag == tagToCheckEnemy)
         {
-            EndGame();
+            if (!invincible) EndGame();
         }
     }
     #endregion
@@ -93,7 +99,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         if(other.transform.tag == tagToCheckEndLine)
         {
-            EndGame();
+            if (!invincible) EndGame();
         }
     }
 
