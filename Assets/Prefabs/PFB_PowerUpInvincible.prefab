@@ -63,7 +63,7 @@ MonoBehaviour:
   graphicItem: {fileID: 1005164149462564603}
   timeToHide: 3
   audioSource: {fileID: 0}
-  duration: 5
+  duration: 3
 --- !u!1 &1005164149462564603
 GameObject:
   m_ObjectHideFlags: 0

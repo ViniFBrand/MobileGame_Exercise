@@ -1,6 +1,7 @@
 using Ebac.Core.Sigleton;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
@@ -12,6 +13,9 @@ public class PlayerController : Singleton<PlayerController>
     public float lerpSpeed = 1f;
 
     public float speed = 1f;
+
+    [Header("TextMeshPro")]
+    public TextMeshPro uiTextPowerUp;
 
     public string tagToCheckEnemy = "Enemy";
     public string tagToCheckEndLine = "EndLine";
@@ -64,7 +68,7 @@ public class PlayerController : Singleton<PlayerController>
     #region POWER UPS
     public void SetPowerUpText(string s)
     {
-        //uiTextPowerUp.text = s;
+        uiTextPowerUp.text = s;
     }
     public void PowerUpSpeedUp(float f)
     {
