@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Ebac.Core.Sigleton;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,6 +17,9 @@ public class PlayerController : Singleton<PlayerController>
 
     [Header("TextMeshPro")]
     public TextMeshPro uiTextPowerUp;
+
+    [Header("Coin Setup")]
+    public GameObject coinCollector;
 
     public string tagToCheckEnemy = "Enemy";
     public string tagToCheckEndLine = "EndLine";
@@ -83,6 +87,32 @@ public class PlayerController : Singleton<PlayerController>
     {
         invincible = b;
     }
+
+    public void ChangeHeight(float amount, float duration, float animationDuration, Ease ease)
+    {
+        /*var p = transform.position;
+        p.y = _startPosition.y + amount;
+        transform.position = p;*/
+
+        transform.DOMoveY(_startPosition.y + amount,animationDuration).SetEase(ease);//.OnComplete(ResetHeight);
+        Invoke(nameof(ResetHeight), duration);
+
+    }
+
+    public void ResetHeight()
+    {
+        transform.DOMoveY(_startPosition.y, .1f);
+
+        /*var p = transform.position;
+        p.y = _startPosition.y;
+        transform.position = p;*/
+    }
+
+    public void ChangeCoinCollectorSize(float amount)
+    {
+        coinCollector.transform.localScale = Vector3.one * amount;
+    }
+
     #endregion
 
 
@@ -103,7 +133,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         if(other.transform.tag == tagToCheckEndLine)
         {
-            if (!invincible) EndGame();
+            EndGame();
         }
     }
 
