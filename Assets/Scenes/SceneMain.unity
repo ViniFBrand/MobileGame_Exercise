@@ -518,7 +518,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296653077}
-  m_LocalRotation: {x: 0.16981427, y: -0.07364314, z: 0.0127266105, w: 0.98263824}
+  m_LocalRotation: {x: 0.16981427, y: -0.07364317, z: 0.012726617, w: 0.98263824}
   m_LocalPosition: {x: 1.23, y: 1.5599986, z: -8.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1354,6 +1354,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5156129202013452133, guid: 89e20167823a30d459856414377997d1, type: 3}
   m_PrefabInstance: {fileID: 809794342}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &809794344 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5974884819924940344, guid: 89e20167823a30d459856414377997d1, type: 3}
+  m_PrefabInstance: {fileID: 809794342}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4800e9fab1166f842a543ba14381adc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &812292124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,7 +1899,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.16981427, y: -0.07364314, z: 0.0127266105, w: 0.98263824}
+  m_LocalRotation: {x: 0.16981427, y: -0.07364317, z: 0.012726617, w: 0.98263824}
   m_LocalPosition: {x: 1.23, y: 1.5599986, z: -8.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3018,6 +3029,7 @@ MonoBehaviour:
   speed: 5
   uiTextPowerUp: {fileID: 307372876}
   coinCollector: {fileID: 1231596256}
+  animatorManager: {fileID: 809794344}
   tagToCheckEnemy: Enemy
   tagToCheckEndLine: EndLine
   invincible: 0

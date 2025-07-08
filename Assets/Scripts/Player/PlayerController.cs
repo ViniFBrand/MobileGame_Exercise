@@ -21,6 +21,10 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Coin Setup")]
     public GameObject coinCollector;
 
+    [Header("Animation")]
+    public AnimatorManager animatorManager;
+
+    [Header("Power Ups")]
     public string tagToCheckEnemy = "Enemy";
     public string tagToCheckEndLine = "EndLine";
     public bool invincible = false;
@@ -61,12 +65,19 @@ public class PlayerController : Singleton<PlayerController>
     public void StartToRun()
     {
         _canRun = true;
+        animatorManager.Play(AnimatorManager.AnimatorType.RUN);
     }
 
-    private void EndGame()
+    private void EndGame(AnimatorManager.AnimatorType animatorType = AnimatorManager.AnimatorType.IDLE)
     {
         _canRun = false;
         endScreen.SetActive(true);
+        animatorManager.Play(animatorType);
+    }
+
+    private void MoveBack(Transform t)
+    {
+        t.DOMoveZ(1f, .3f).SetRelative();
     }
 
     #region POWER UPS
@@ -123,7 +134,11 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (collision.transform.tag == tagToCheckEnemy)
         {
-            if (!invincible) EndGame();
+            if (!invincible)
+            {
+                MoveBack(collision.transform);
+                EndGame(AnimatorManager.AnimatorType.DEATH);
+            }
         }
     }
     #endregion
