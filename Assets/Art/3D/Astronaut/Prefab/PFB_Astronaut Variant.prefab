@@ -35,10 +35,13 @@ MonoBehaviour:
   animatorSetups:
   - type: 0
     trigger: idle
+    speed: 1
   - type: 1
     trigger: run
+    speed: 1
   - type: 2
     trigger: death
+    speed: 1.5
 --- !u!1001 &4613086030138626190
 PrefabInstance:
   m_ObjectHideFlags: 0
