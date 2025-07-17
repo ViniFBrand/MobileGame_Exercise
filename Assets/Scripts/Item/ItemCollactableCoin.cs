@@ -34,7 +34,7 @@ public class ItemCollactableCoin : ItemCollectableBase
     protected override void OnCollect()
     {
         base.OnCollect();
-        ItemManager.Instance.AddCoins();
+        //ItemManager.Instance.AddCoins();
         collider.enabled = false;
         collect = true;
         //PlayerController.Instance.Bounce();
