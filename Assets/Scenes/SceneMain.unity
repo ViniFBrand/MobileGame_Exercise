@@ -898,7 +898,11 @@ MonoBehaviour:
   - artType: 1
     colors:
     - {r: 1, g: 0.45882356, b: 0.7483232, a: 0}
-    - {r: 0.9607843, g: 0.8984156, b: 0.31372544, a: 0}
+    - {r: 0.5660378, g: 0.45517638, b: 0.22694911, a: 0}
+  - artType: 2
+    colors:
+    - {r: 0.9676463, g: 1, b: 0.6650944, a: 0}
+    - {r: 0.8396226, g: 0.8335719, b: 0.25743148, a: 0}
 --- !u!4 &470213095
 Transform:
   m_ObjectHideFlags: 0
@@ -1724,6 +1728,7 @@ MonoBehaviour:
   levelPieceBasedSetups:
   - {fileID: 11400000, guid: 719cd03bb76995042bbb617ea9702205, type: 2}
   - {fileID: 11400000, guid: ce6874f06ad51ae49b95c7b07d62d301, type: 2}
+  - {fileID: 11400000, guid: 2309a0e78d86884419fdd9fc074c5684, type: 2}
   timeBetweenPieces: 0.3
   _index: 0
 --- !u!4 &1157646706
