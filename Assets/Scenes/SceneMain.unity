@@ -1731,6 +1731,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2309a0e78d86884419fdd9fc074c5684, type: 2}
   timeBetweenPieces: 0.3
   _index: 0
+  _currSetup: {fileID: 0}
 --- !u!4 &1157646706
 Transform:
   m_ObjectHideFlags: 0
@@ -2213,6 +2214,8 @@ MonoBehaviour:
     gameObject: {fileID: 8268319629999195363, guid: 5fe1a254c32eeae468b8a797da64c698, type: 3}
   - artType: 1
     gameObject: {fileID: 8981740241088319088, guid: 67b44074f37a25b468a871447902debb, type: 3}
+  - artType: 2
+    gameObject: {fileID: 1980136983347656680, guid: a40b37308e165fa438f487fa297fca06, type: 3}
 --- !u!4 &2003948448
 Transform:
   m_ObjectHideFlags: 0

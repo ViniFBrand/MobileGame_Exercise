@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private int _index;
     private GameObject _currentLevel;
     private List<LevelPieceBase> _spawnedPieces = new List<LevelPieceBase>();
-    private LevelPieceBasedSetup _currSetup;
+    [SerializeField] private LevelPieceBasedSetup _currSetup;
 
 
 
@@ -104,6 +104,7 @@ public class LevelManager : MonoBehaviour
 
         foreach(var p in spawnedPiece.GetComponentsInChildren<ArtPiece>())
         {
+            Debug.Log("Index atual: " + _index);
             p.ChangePiece(ArtManager.Instance.GetSetupByType(_currSetup.ArtType).gameObject);
         }
 
