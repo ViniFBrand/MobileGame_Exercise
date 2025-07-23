@@ -90,6 +90,7 @@ public class LevelManager : MonoBehaviour
 
         StartCoroutine(ScalePieceByTime());
 
+
     }
 
     IEnumerator ScalePieceByTime()
@@ -106,6 +107,8 @@ public class LevelManager : MonoBehaviour
             _spawnedPieces[i].transform.DOScale(1, scaleDuration).SetEase(ease);
             yield return new WaitForSeconds(scaleTimeBetweenPieces);
         }
+
+        CoinsAnimationManager.Instance.StartAnimations();
     }
 
     private void CreateLevelPiece(List<LevelPieceBase> list)
@@ -160,6 +163,7 @@ public class LevelManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
+            CoinsAnimationManager.Instance.CleanCoins();
             CreateLevelPieces();
         }
     }
