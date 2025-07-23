@@ -69,19 +69,16 @@ public class LevelManager : MonoBehaviour
 
         for (int i = 0; i < _currSetup.piecesNumberStart; i++)
         {
-            Debug.Log(_currSetup.name);
             CreateLevelPiece(_currSetup.levelPiecesStart);
         }
 
         for (int i = 0; i < _currSetup.piecesNumber; i++)
         {
-            Debug.Log(_currSetup.name);
             CreateLevelPiece(_currSetup.levelPieces);
         }
 
         for (int i = 0; i < _currSetup.piecesNumberEnd; i++)
         {
-            Debug.Log(_currSetup.name);
             CreateLevelPiece(_currSetup.levelPiecesEnd);
         }
 
@@ -89,12 +86,14 @@ public class LevelManager : MonoBehaviour
 
     }
 
+    
+
     private void CreateLevelPiece(List<LevelPieceBase> list)
     {
         var piece = list[UnityEngine.Random.Range(0, list.Count)];
         var spawnedPiece = Instantiate(piece, container);
 
-        if(_spawnedPieces.Count > 0)
+        if (_spawnedPieces.Count > 0)
         {
             var lastPiece = _spawnedPieces[_spawnedPieces.Count - 1];
 
@@ -107,8 +106,7 @@ public class LevelManager : MonoBehaviour
 
         foreach(var p in spawnedPiece.GetComponentsInChildren<ArtPiece>())
         {
-            Debug.Log("Index atual: " + _index);
-            Debug.Log(_currSetup.ArtType);
+            //Debug.Log("Index atual: " + _index);
             p.ChangePiece(ArtManager.Instance.GetSetupByType(_currSetup.ArtType).gameObject);
         }
 

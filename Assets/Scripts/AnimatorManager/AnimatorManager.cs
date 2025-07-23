@@ -27,6 +27,7 @@ public class AnimatorManager : MonoBehaviour
         }
     }
 
+    //Forma de testar Animações
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))

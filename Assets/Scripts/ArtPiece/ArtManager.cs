@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class ArtManager : Singleton<ArtManager>
 {
+
     public enum ArtType
     {
         TYPE_01,
@@ -19,6 +20,7 @@ public class ArtManager : Singleton<ArtManager>
 
     public ArtSetup GetSetupByType(ArtType artType)
     {
+        //Debug.Log("ArtManager Started");
         return artSetups.Find(i => i.artType == artType);
     }
 
