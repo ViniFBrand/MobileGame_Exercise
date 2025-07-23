@@ -29,9 +29,9 @@ public class PlayerController : Singleton<PlayerController>
     public string tagToCheckEndLine = "EndLine";
     public bool invincible = false;
 
-
-
     public GameObject endScreen;
+
+    [SerializeField] private BounceHelper _bounceHelper;
 
     //privates
     private bool _canRun;
@@ -79,6 +79,12 @@ public class PlayerController : Singleton<PlayerController>
     private void MoveBack(Transform t)
     {
         t.DOMoveZ(1f, .3f).SetRelative();
+    }
+
+    public void Bounce()
+    {
+        if(_bounceHelper != null)
+            _bounceHelper.Bounce();
     }
 
     #region POWER UPS

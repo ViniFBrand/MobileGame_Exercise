@@ -24,7 +24,7 @@ public class ItemCollactableCoin : ItemCollectableBase
 
             if (Vector3.Distance(transform.position, PlayerController.Instance.transform.position) < minDistance)
             {
-                //HideItens();
+                HideItens();
                 Destroy(gameObject);
             }
         }
@@ -37,16 +37,11 @@ public class ItemCollactableCoin : ItemCollectableBase
         //ItemManager.Instance.AddCoins();
         collider.enabled = false;
         collect = true;
-        //PlayerController.Instance.Bounce();
+        PlayerController.Instance.Bounce();
     }
 
     protected override void Collect()
     {
         OnCollect();
-    }
-
-    public void HideItens()
-    {
-
     }
 }
