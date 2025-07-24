@@ -1,0 +1,50 @@
+using DG.Tweening;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.Collections;
+using UnityEngine;
+
+[RequireComponent(typeof(MeshRenderer))]
+public class ColorChange : MonoBehaviour
+{
+    public float duration = .2f;
+    public float delay = .5f;
+    public MeshRenderer meshRenderer;
+    public Color startColor = Color.white;
+
+    private Color _correctColor;
+    
+
+
+    private void Awake()
+    {
+        //Debug.Log("ColorChange Test: C");
+    }
+    private void OnValidate()
+    {
+        meshRenderer = GetComponent<MeshRenderer>();
+    }
+
+    private void Start()
+    {
+        _correctColor = meshRenderer.materials[0].GetColor("_Color");
+        LerpColor();
+    }
+
+
+    private void LerpColor()
+    {
+        meshRenderer.materials[0].SetColor("_Color", startColor);
+        meshRenderer.materials[0].DOColor(_correctColor, duration).SetDelay(delay);
+    }
+
+    //Teste
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            LerpColor();
+        }
+    }
+    //
+}
