@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class PlayerController : Singleton<PlayerController>
 {
@@ -23,6 +24,11 @@ public class PlayerController : Singleton<PlayerController>
 
     [Header("Animation")]
     public AnimatorManager animatorManager;
+
+    [Header("Player Animation")]
+    public Ease ease = Ease.Linear;
+    public float scaleDuration = .2f;
+
 
     [Header("Power Ups")]
     public string tagToCheckEnemy = "Enemy";
@@ -45,6 +51,7 @@ public class PlayerController : Singleton<PlayerController>
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(AppearAnimation());
         _startPosition = transform.position;
         ResetSpeed();
     }
@@ -86,6 +93,14 @@ public class PlayerController : Singleton<PlayerController>
         if(_bounceHelper != null)
             _bounceHelper.Bounce();
     }
+
+    public IEnumerator AppearAnimation()
+    {
+        this.transform.localScale = Vector3.zero;
+        yield return new WaitForSeconds(.5f);
+        this.transform.DOScale(1, scaleDuration);
+    }
+
 
     #region POWER UPS
     public void SetPowerUpText(string s)

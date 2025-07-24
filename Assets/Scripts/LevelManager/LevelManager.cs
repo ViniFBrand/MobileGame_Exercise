@@ -27,6 +27,7 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("Change Level: D");
         //SpawnNextLevel();
         CreateLevelPieces();
     }
@@ -164,8 +165,12 @@ public class LevelManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             CoinsAnimationManager.Instance.CleanCoins();
+            PlayerController.Instance.AppearAnimation();
             CreateLevelPieces();
+            
+            
         }
     }
+    //
 }
 

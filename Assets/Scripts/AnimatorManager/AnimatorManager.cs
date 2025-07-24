@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ public class AnimatorManager : MonoBehaviour
 {
     public Animator animator;
     public List<AnimatorSetup> animatorSetups;
+
     public enum AnimatorType
     {
         IDLE,
@@ -43,6 +45,7 @@ public class AnimatorManager : MonoBehaviour
             Play(AnimatorType.IDLE);
         }
     }
+
 }
 
 [System.Serializable]

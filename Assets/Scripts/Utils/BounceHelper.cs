@@ -10,6 +10,12 @@ public class BounceHelper : MonoBehaviour
     public float scaleBounce = 1.2f;
     public Ease ease = Ease.OutBack;
 
+    private void Awake()
+    {
+        //Debug.Log("BounceHelper Test: B");
+    }
+
+    //Teste
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.B))
@@ -17,6 +23,7 @@ public class BounceHelper : MonoBehaviour
             Bounce();
         } 
     }
+    //
 
     public void Bounce()
     {
