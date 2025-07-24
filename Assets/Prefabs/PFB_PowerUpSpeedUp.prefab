@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5780115407196237277}
   - component: {fileID: 5780115407196237272}
   - component: {fileID: 9169851888006256223}
+  - component: {fileID: 5197435098357037937}
   m_Layer: 0
   m_Name: PFB_PowerUpSpeedUp
   m_TagString: Untagged
@@ -65,6 +66,21 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   duration: 2
   amountToSpeed: 9
+--- !u!114 &5197435098357037937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5780115407196237274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56324999dfbfe7745842c38d5067f648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleDuration: 0.2
+  scaleBounce: 1.2
+  ease: 27
 --- !u!1 &5780115408297973884
 GameObject:
   m_ObjectHideFlags: 0

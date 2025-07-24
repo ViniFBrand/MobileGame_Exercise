@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 2553912040821427940}
   - component: {fileID: 2553912040821427941}
   - component: {fileID: 2553912040821427942}
+  - component: {fileID: 6189885886450993709}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -259,6 +260,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &6189885886450993709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2553912040821427960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40eed58f3b8c5f24b9c0d740842e8ba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  meshRenderer: {fileID: 2553912040821427941}
+  startColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &3814767998422191950
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,13 +957,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8684cc9629f81ad419596c734e9eb1f8, type: 3}
---- !u!1 &597430389306840664 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4394218019882611910, guid: 8684cc9629f81ad419596c734e9eb1f8, type: 3}
-  m_PrefabInstance: {fileID: 3796844307501114014}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &597430389306840667 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4394218019882611909, guid: 8684cc9629f81ad419596c734e9eb1f8, type: 3}
+  m_PrefabInstance: {fileID: 3796844307501114014}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &597430389306840664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4394218019882611910, guid: 8684cc9629f81ad419596c734e9eb1f8, type: 3}
   m_PrefabInstance: {fileID: 3796844307501114014}
   m_PrefabAsset: {fileID: 0}

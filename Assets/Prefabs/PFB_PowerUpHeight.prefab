@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6143227956348953150}
   - component: {fileID: 6143227956348953147}
   - component: {fileID: -8048333525920933059}
+  - component: {fileID: -505094226004067474}
   m_Layer: 0
   m_Name: PFB_PowerUpHeight
   m_TagString: Untagged
@@ -66,6 +67,21 @@ MonoBehaviour:
   duration: 3
   amountHeight: 2
   animationDuration: 0.1
+  ease: 27
+--- !u!114 &-505094226004067474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6143227956348953145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56324999dfbfe7745842c38d5067f648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleDuration: 0.2
+  scaleBounce: 1.2
   ease: 27
 --- !u!1 &6143227957658834847
 GameObject:

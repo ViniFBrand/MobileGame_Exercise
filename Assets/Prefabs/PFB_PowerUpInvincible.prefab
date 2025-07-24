@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1005164148482444122}
   - component: {fileID: 1005164148482444127}
   - component: {fileID: 7432865123740680376}
+  - component: {fileID: -1656582887638786276}
   m_Layer: 0
   m_Name: PFB_PowerUpInvincible
   m_TagString: Untagged
@@ -64,6 +65,21 @@ MonoBehaviour:
   timeToHide: 3
   audioSource: {fileID: 0}
   duration: 3
+--- !u!114 &-1656582887638786276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005164148482444125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56324999dfbfe7745842c38d5067f648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleDuration: 0.2
+  scaleBounce: 1.2
+  ease: 27
 --- !u!1 &1005164149462564603
 GameObject:
   m_ObjectHideFlags: 0

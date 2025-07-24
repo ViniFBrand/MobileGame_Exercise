@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1718197065420128474}
   - component: {fileID: 1718197065420128479}
   - component: {fileID: -7890665521290027065}
+  - component: {fileID: 2325600681366745106}
   m_Layer: 0
   m_Name: PFB_PowerUpCoins
   m_TagString: Untagged
@@ -65,6 +66,21 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   duration: 3
   sizeAmount: 7
+--- !u!114 &2325600681366745106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718197065420128477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56324999dfbfe7745842c38d5067f648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleDuration: 0.2
+  scaleBounce: 1.2
+  ease: 27
 --- !u!1 &1718197066394580347
 GameObject:
   m_ObjectHideFlags: 0
