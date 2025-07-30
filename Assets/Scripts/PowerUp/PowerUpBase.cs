@@ -14,6 +14,7 @@ public class PowerUpBase : ItemCollectableBase
     protected virtual void StartPowerUp()
     {
         Debug.Log("Start Power Up");
+        PlayerController.Instance.Bounce();
         Invoke(nameof(EndPowerUp), duration);
     }
     protected virtual void EndPowerUp()
