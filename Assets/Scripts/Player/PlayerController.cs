@@ -25,6 +25,9 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")]
     public AnimatorManager animatorManager;
 
+    [Header("Particle System")]
+    public ParticleSystem vfxDeath;
+
     [Header("Player Animation")]
     public Ease ease = Ease.Linear;
     public float scaleDuration = .2f;
@@ -81,6 +84,7 @@ public class PlayerController : Singleton<PlayerController>
         _canRun = false;
         endScreen.SetActive(true);
         animatorManager.Play(animatorType);
+        if(vfxDeath != null) vfxDeath.Play();
     }
 
     private void MoveBack(Transform t)

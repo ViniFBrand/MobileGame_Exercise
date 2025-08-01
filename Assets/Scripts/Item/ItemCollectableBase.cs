@@ -7,6 +7,7 @@ public class ItemCollectableBase : MonoBehaviour
     public ParticleSystem particleSystem;
     public string compareTag = "Player";
     public GameObject graphicItem;
+    public Transform plane;
     public float timeToHide = 3;
 
     [Header("Sounds")]
@@ -41,7 +42,12 @@ public class ItemCollectableBase : MonoBehaviour
 
     protected virtual void OnCollect()
     {
-        if(particleSystem != null) particleSystem.Play();
+        if (particleSystem != null)
+        {
+            particleSystem.collision.SetPlane(0, plane);
+            particleSystem.transform.SetParent(null);
+            particleSystem.Play();
+        }
         if(audioSource != null) audioSource.Play();
     }
 }
