@@ -25,8 +25,11 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")]
     public AnimatorManager animatorManager;
 
-    [Header("Particle System")]
+    [Header("VFX")]
     public ParticleSystem vfxDeath;
+
+    [Header("Boundaries")]
+    public Vector2 limitVector = new Vector2 (-4,4);
 
     [Header("Player Animation")]
     public Ease ease = Ease.Linear;
@@ -67,6 +70,9 @@ public class PlayerController : Singleton<PlayerController>
         _pos = target.position;
         _pos.y = transform.position.y;
         _pos.z = transform.position.z;
+
+        if (_pos.x < limitVector.x) _pos.x = limitVector.x;
+        if (_pos.x > limitVector.y) _pos.x = limitVector.y;
 
         transform.position = Vector3.Lerp(transform.position, _pos, lerpSpeed * Time.deltaTime);
         transform.Translate(transform.forward * _currentSpeed * Time.deltaTime);

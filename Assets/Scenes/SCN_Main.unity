@@ -578,7 +578,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296653077}
-  m_LocalRotation: {x: 0.16981427, y: -0.07364317, z: 0.012726617, w: 0.98263824}
+  m_LocalRotation: {x: 0.16981426, y: -0.073643185, z: 0.01272662, w: 0.98263824}
   m_LocalPosition: {x: 1.23, y: 1.5599986, z: -8.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1784,7 +1784,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.16981427, y: -0.07364317, z: 0.012726617, w: 0.98263824}
+  m_LocalRotation: {x: 0.16981426, y: -0.073643185, z: 0.01272662, w: 0.98263824}
   m_LocalPosition: {x: 1.23, y: 1.5599986, z: -8.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2780,6 +2780,7 @@ MonoBehaviour:
   coinCollector: {fileID: 1231596256}
   animatorManager: {fileID: 809794344}
   vfxDeath: {fileID: 3238191626773930953}
+  limitVector: {x: -4, y: 4}
   ease: 27
   scaleDuration: 0.2
   tagToCheckEnemy: Enemy
