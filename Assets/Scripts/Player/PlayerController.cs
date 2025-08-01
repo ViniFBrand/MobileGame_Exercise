@@ -84,7 +84,6 @@ public class PlayerController : Singleton<PlayerController>
         _canRun = false;
         endScreen.SetActive(true);
         animatorManager.Play(animatorType);
-        if(vfxDeath != null) vfxDeath.Play();
     }
 
     private void MoveBack(Transform t)
@@ -164,6 +163,7 @@ public class PlayerController : Singleton<PlayerController>
             {
                 MoveBack(collision.transform);
                 EndGame(AnimatorManager.AnimatorType.DEATH);
+                if (vfxDeath != null) vfxDeath.Play();
             }
         }
     }
