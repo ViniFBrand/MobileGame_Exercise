@@ -22,6 +22,7 @@ public class AnimatorManager : MonoBehaviour
         {
             if (animation.type == type)
             {
+                Debug.Log(animation.trigger);
                 animator.SetTrigger(animation.trigger);
                 animator.speed = animation.speed * currentSpeedFactor;
                 break;
