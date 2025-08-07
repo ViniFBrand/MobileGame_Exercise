@@ -8,10 +8,12 @@ public class LoadSceneHelper : MonoBehaviour
     public void Load(int i)
     {
         SceneManager.LoadScene(i);
+        PlayerController.Instance.deathTriggered = false;
     }
 
     public void Load(string s)
     {
         SceneManager.LoadScene(s);
+        PlayerController.Instance.deathTriggered = false;
     }
 }

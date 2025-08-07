@@ -2783,6 +2783,7 @@ MonoBehaviour:
   limitVector: {x: -4, y: 4}
   ease: 27
   scaleDuration: 0.2
+  deathTriggered: 0
   tagToCheckEnemy: Enemy
   tagToCheckEndLine: EndLine
   invincible: 0

@@ -35,6 +35,9 @@ public class PlayerController : Singleton<PlayerController>
     public Ease ease = Ease.Linear;
     public float scaleDuration = .2f;
 
+    [Header("Death Management")]
+    public bool deathTriggered = false;
+
 
     [Header("Power Ups")]
     public string tagToCheckEnemy = "Enemy";
@@ -57,6 +60,7 @@ public class PlayerController : Singleton<PlayerController>
     // Start is called before the first frame update
     void Start()
     {
+        deathTriggered = false;
         StartCoroutine(AppearAnimation());
         _startPosition = transform.position;
         ResetSpeed();
@@ -89,7 +93,17 @@ public class PlayerController : Singleton<PlayerController>
     {
         _canRun = false;
         endScreen.SetActive(true);
-        animatorManager.Play(animatorType);
+
+        if(AnimatorManager.AnimatorType.DEATH == animatorType && deathTriggered == false)
+        {
+            animatorManager.Play(animatorType);
+            deathTriggered = true;
+        }
+        else if(AnimatorManager.AnimatorType.RUN == animatorType | AnimatorManager.AnimatorType.IDLE == animatorType)
+        {
+            animatorManager.Play(animatorType);
+        }
+        
     }
 
     private void MoveBack(Transform t)
@@ -168,8 +182,8 @@ public class PlayerController : Singleton<PlayerController>
             if (!invincible)
             {
                 MoveBack(collision.transform);
+                if (vfxDeath != null && deathTriggered == false) vfxDeath.Play();
                 EndGame(AnimatorManager.AnimatorType.DEATH);
-                if (vfxDeath != null) vfxDeath.Play();
             }
         }
     }

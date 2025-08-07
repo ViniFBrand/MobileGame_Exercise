@@ -164,6 +164,7 @@ public class LevelManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
+            PlayerController.Instance.deathTriggered = false;
             CoinsAnimationManager.Instance.CleanCoins();
             PlayerController.Instance.AppearAnimation();
             CreateLevelPieces();
